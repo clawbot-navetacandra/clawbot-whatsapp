@@ -1,0 +1,3 @@
+{
+    "ignore": ["./app/whatsapp-session.json", "./app/src/waifu.png", "./app/core/logs.json"]
+}

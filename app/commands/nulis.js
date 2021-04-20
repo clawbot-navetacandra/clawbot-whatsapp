@@ -7,10 +7,10 @@ const handler = {
             m.reply('Mana teksnya!1!!')
         } else {
             try {
-                let _fetch = await fetch('https://fierce-brushlands-90323.herokuapp.com/nulis?teks=' + teks)
+                let _fetch = await fetch(`https://${process.env.API_URL}/nulis?teks=` + teks)
                 if (_fetch.status == 200) {
                     let _res = await _fetch.json();
-                    let res = await _res.results.data;
+                    let res = _res.results.data;
                     if (!res.startsWith('/')) {
                         m.reply('Gambar tidak dapat terkirim, karena terjadi kesalahan sistem.*')
                     } else {

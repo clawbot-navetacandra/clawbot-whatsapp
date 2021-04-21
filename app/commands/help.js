@@ -51,7 +51,7 @@ const handler = {
         let bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
         let week = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', "Jum'at", "Sabtu"][d.getDay()]
         let date = `${d.getDate()} ${bulan[d.getMonth()]} ${d.getFullYear()}`
-        let time = new Date().toLocaleTimeString('id').replace(/\./g, ' : ')
+        let time = d.replace(/\./g, ' : ')
 
 
         const message = `
@@ -82,9 +82,6 @@ ${ListCommand('Game', usedprefix)}
 ╰───────\n
 ╭─「 Group 」
 ${ListCommand('Group', usedprefix)}
-╰───────\n
-╭─「 Education 」
-${ListCommand('Education', usedprefix)}
 ╰───────\n
 ╭─「 Tools 」
 ${ListCommand('Tools', usedprefix)}

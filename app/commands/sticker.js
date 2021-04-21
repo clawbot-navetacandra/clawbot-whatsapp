@@ -1,10 +1,13 @@
-const fs = require('fs')
 const handler = {
-    async exec({ m , MessageMedia}) {
+    async exec({ m }) {
         if (m.hasMedia) {
             let media = await m.downloadMedia();
             media.filename = ''
-            m.reply(media, m.from, {sendMediaAsSticker: true})
+            try {
+                m.reply(media, m.from, {sendMediaAsSticker: true})
+            } catch (err) {
+                m.reply(err)
+            }
         } else {
             if (m.hasQuotedMsg) {
                 m.reply('Tidak support media reply!')

@@ -51,7 +51,7 @@ const handler = {
         let bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
         let week = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', "Jum'at", "Sabtu"][d.getDay()]
         let date = `${d.getDate()} ${bulan[d.getMonth()]} ${d.getFullYear()}`
-        let time = d.replace(/\./g, ' : ')
+        let time = d.toTimeString().split(' ')[0].replace(/\.?\:/g, ' : ')
 
 
         const message = `
